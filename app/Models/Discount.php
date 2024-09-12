@@ -16,4 +16,9 @@ class Discount extends Model
     {
         return $this->belongsTo(Order::class);
     }
+
+    public function bannerDiscounts()
+    {
+        return $this->hasMany(BannerDiscount::class);
+    }
 }

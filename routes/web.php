@@ -70,7 +70,8 @@ Route::middleware(AuthMiddleware::class, PegawaiAdminMiddleware::class)->prefix(
         Route::post('/', [UserController::class, 'store'])->name('user.store')->middleware(AdminOnlyMiddleware::class);
         Route::put('/{id}', [UserController::class, 'update'])->name('user.update')->middleware(AdminOnlyMiddleware::class);
         Route::delete('/{id}', [UserController::class, 'delete'])->name('user.delete')->middleware(AdminOnlyMiddleware::class);
-
+        Route::put('/ban/{id}', [UserController::class, 'banUser'])->name('user.ban')->middleware(AdminOnlyMiddleware::class);
+        Route::put('/unban/{id}', [UserController::class, 'unbanUser'])->name('user.unban')->middleware(AdminOnlyMiddleware::class);
         Route::get('/profile', [UserController::class, 'profile'])->name('profile');
         Route::get('/change-password', [UserController::class, 'changePassword'])->name('changePassword');
     });
@@ -86,7 +87,12 @@ Route::middleware(AuthMiddleware::class, PegawaiAdminMiddleware::class)->prefix(
     Route::prefix('discount')->group(function () {
         Route::get('/', [DiscountController::class, 'index'])->name('discount');
         Route::post('/', [DiscountController::class, 'store'])->name('discount.store');
+        Route::put('/{id}', [DiscountController::class, 'update'])->name('discount.update');
         Route::delete('/{id}', [DiscountController::class, 'delete'])->name('discount.delete');
+
+        Route::get('/banner', [DiscountController::class, 'banner'])->name('discount.banner');
+        Route::put('/banner/{id}', [DiscountController::class, 'bannerUpdate'])->name('discount.banner.update');
+        Route::put('/banner-upload/{id}', [DiscountController::class, 'bannerUpload'])->name('discount.banner.upload');
     });
 
     // Product Management

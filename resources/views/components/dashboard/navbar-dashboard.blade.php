@@ -59,15 +59,6 @@
                                 class="bx bx-cog bx-md me-3"></i><span>Settings</span> </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
-                            <span class="d-flex align-items-center align-middle">
-                                <i class="flex-shrink-0 bx bx-credit-card bx-md me-3"></i><span
-                                    class="flex-grow-1 align-middle">Billing Plan</span>
-                                <span class="flex-shrink-0 badge rounded-pill bg-danger">4</span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
                         <a class="dropdown-item" href="{{ route('home') }}">
                             <i class="bx bx-home bx-md me-3"></i><span>Home</span>
                         </a>

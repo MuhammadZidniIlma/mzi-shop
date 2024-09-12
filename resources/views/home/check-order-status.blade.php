@@ -33,6 +33,14 @@
                                         </td>
                                     </tr>
                                 @endforeach
+                                {{-- cek apakah ada order --}}
+                                @if (count($orders) == 0)
+                                    <tr>
+                                        <td colspan="6" class="text-center text-secondary">
+                                            No orders yet
+                                        </td>
+                                    </tr>
+                                @endif
                             </tbody>
                         </table>
                     </div>

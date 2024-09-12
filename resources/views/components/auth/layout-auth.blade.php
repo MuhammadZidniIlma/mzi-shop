@@ -28,6 +28,17 @@
     <link rel="stylesheet" type="text/css" href="assetLogin/css/util.css">
     <link rel="stylesheet" type="text/css" href="assetLogin/css/main.css">
     <!--===============================================================================================-->
+
+    <style>
+        .notify {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+            display: flex;
+            align-items: flex-start;
+        }
+    </style>
 </head>
 
 <body>

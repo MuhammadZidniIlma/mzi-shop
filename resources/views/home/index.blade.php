@@ -50,6 +50,19 @@
     <x-service-more url="Explore" />
     <!-- End We Help Section -->
 
+    <!-- Start Discount Section -->
+    <section id="discount my-5">
+        <div class="container my-5">
+            @if ($banner && $banner->image)
+                <div class="banner-item">
+                    <img src="{{ asset('image/' . $banner->image) }}" alt="Discount Image"
+                        style="width: 100%; height: 550px; border-radius: 10px">
+                </div>
+            @endif
+        </div>
+    </section>
+    <!-- End Discount Section -->
+
     <!-- Start Testimonial Slider -->
     <x-testimonial />
     <!-- End Testimonial Slider -->

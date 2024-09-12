@@ -7,8 +7,8 @@
                 <h2 class="mb-4 text-white">{{ $posts->title }}</h2>
                 <div class="info-container d-flex align-items-center">
                     <figure class="me-3 d-inline-block">
-                        <img src="{{ $posts->user->image ? asset('profile/' . $posts->user->image) : asset('profile/default.png') }}"
-                            alt="Image" class="img-fluid" style="width: 30px">
+                        <img src="{{ $posts->user->avatar ? asset('profile/' . $posts->user->avatar) : asset('profile/default.png') }}"
+                            alt="avatar" class="img-fluid" style="width: 30px; border-radius: 50%">
                     </figure>
                     <div class="info-text">
                         <span>{{ $posts->user->username }}</span>

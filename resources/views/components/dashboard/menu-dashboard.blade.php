@@ -81,8 +81,8 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="Components-without-menu.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="tables service">Tables Service</div>
+                    <a href="{{ route('discount.banner') }}" class="menu-link">
+                        <div class="text-truncate" data-i18n="Banner Discount">Banner Discount</div>
                     </a>
                 </li>
             </ul>

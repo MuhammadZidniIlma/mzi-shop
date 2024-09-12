@@ -35,7 +35,7 @@
                                     <img src="{{ $post->image ? asset('image/' . $post->image) : asset('image/belum-upload.png') }}"
                                         class="img-thumbnail" alt="post" style="width: 150px">
                                 </td>
-                                <td>{{ $post->title }}</td>
+                                <td>{{ Str::words($post->title, 5, '...') }}</td>
                                 <td>
                                     {{ $post->user->username }}
                                 </td>

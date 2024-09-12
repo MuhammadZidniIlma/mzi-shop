@@ -27,13 +27,31 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name_product' => 'required|min:3|max:255',
-            'description' => 'required|min:3|max:255',
+            'description' => 'required|min:3',
             'price' => 'required|numeric',
             'price_discount' => 'nullable|numeric',
             'stock' => 'required|numeric',
             'category_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_gallery' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ], [
+            'name_product.required' => 'Product name is required',
+            'description.required' => 'Product description is required',
+            'price.required' => 'Product price is required',
+            'stock.required' => 'Product stock is required',
+            'category_id.required' => 'Product category is required',
+            'image.required' => 'Product image is required',
+            'image.mimes' => 'File image harus berupa jpeg, png, jpg, svg',
+            'image_gallery.mimes' => 'File image harus berupa jpeg, png, jpg, svg',
+            'image.max' => 'File image maksimal 2 MB',
+            'image_gallery.max' => 'File image maksimal 2 MB',
+            'image.image' => 'File image harus berupa gambar',
+            'image_gallery.image' => 'File image harus berupa gambar',
+            'price.numeric' => 'Product price must be a number',
+            'stock.numeric' => 'Product stock must be a number',
+            'price_discount.numeric' => 'Product price discount must be a number',
+            'stock.numeric' => 'Product stock must be a number',
+            'category_id.numeric' => 'Product category must be a number',
         ]);
 
         $validated['discount'] = 0;
@@ -73,7 +91,7 @@ class ProductController extends Controller
         // Validasi input
         $validated = $request->validate([
             'name_product' => 'required|min:3|max:255',
-            'description' => 'required|min:3|max:255',
+            'description' => 'required|min:3',
             'price' => 'required|numeric',
             'price_discount' => 'nullable|numeric',
             'stock' => 'required|numeric',

@@ -13,6 +13,11 @@
                         @method('PUT')
                         @csrf
                         <div class="mb-3">
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullname" name="fullname"
+                                placeholder="Masukkan Full Name" value="{{ $user->fullname }}">
+                        </div>
+                        <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
                                 placeholder="Masukkan username" value="{{ $user->username }}">

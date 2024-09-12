@@ -42,6 +42,18 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('../assets/js/config.js') }}"></script>
+
+    <style>
+        /* Custom notification styling */
+        .notify {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+            display: flex;
+            align-items: flex-start;
+        }
+    </style>
 </head>
 
 <body>
@@ -57,6 +69,7 @@
                 <!-- Navbar -->
                 <x-navbar-dashboard />
                 <!-- / Navbar -->
+                <x-notify::notify class="notify" />
 
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
@@ -67,7 +80,6 @@
                     </div>
                     <!-- / Content -->
 
-                    <x-notify::notify class="notify" />
                 </div>
                 <!-- Content wrapper -->
             </div>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BannerDiscount;
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Discount;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\User;
@@ -22,7 +24,18 @@ class HomeController extends Controller
 
         $posts = Post::with('user')->latest()->paginate(3);
 
-        return view('home.index', compact('products', 'posts'));
+        // Ambil semua banner_discount yang ada
+        $bannerDiscounts = BannerDiscount::all();
+
+        // Ambil discount_id dari banner_discount
+        $discountIds = $bannerDiscounts->pluck('discount_id');
+
+        // Ambil diskon pertama berdasarkan discount_id dan status active
+        $banner = Discount::whereIn('id', $discountIds)
+            ->where('status', 'active')
+            ->first();
+
+        return view('home.index', compact('products', 'posts', 'banner'));
     }
 
     public function about()
@@ -96,11 +109,7 @@ class HomeController extends Controller
 
         // Validasi input dari request
         $validated = $request->validate([
-            'username' => [
-                'required',
-                'min:3',
-                Rule::unique('users')->ignore($user->id),
-            ],
+            'fullname' => 'required|min:3|max:50',
             'email' => [
                 'required',
                 'email',

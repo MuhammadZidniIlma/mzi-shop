@@ -62,7 +62,29 @@
                                             data-bs-toggle="dropdown" aria-expanded="false"><i
                                                 class="bx bx-dots-vertical-rounded bx-md"></i></a>
                                         <ul class="dropdown-menu dropdown-menu-end m-0" style="">
-                                            <li><a href="javascript:;" class="dropdown-item">Details</a></li>
+                                            {{-- <li>
+                                                <a type="button" class="dropdown-item detail-record"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#actived{{ $user->id }}">Actived
+                                                </a>
+                                            </li> --}}
+                                            <li>
+                                                <a type="button" class="dropdown-item detail-record"
+                                                    data-bs-toggle="modal" data-bs-target="#ban{{ $user->id }}">Ban
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a type="button" class="dropdown-item detail-record"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#unban{{ $user->id }}">Unban
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a type="button" class="dropdown-item detail-record"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#detail{{ $user->id }}">Details
+                                                </a>
+                                            </li>
                                             <div class="dropdown-divider"></div>
                                             <li>
                                                 <a type="button" class="dropdown-item text-danger delete-record"
@@ -78,6 +100,8 @@
                                     </button>
                                     @include('dashboard.users.edit')
                                     @include('dashboard.users.delete')
+                                    @include('dashboard.users.detail')
+                                    @include('dashboard.users.banned')
                                 </td>
                             </tr>
                         @endforeach

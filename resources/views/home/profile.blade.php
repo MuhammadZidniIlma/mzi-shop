@@ -4,11 +4,13 @@
             <div class="nav-align-top">
                 <ul class="nav nav-pills flex-column flex-md-row mb-6">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('profile.home', Auth::user()->id) }}">
+                        <a class="nav-link active" style="background-color: green"
+                            href="{{ route('profile.home', Auth::user()->id) }}">
                             Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('changePasswordHome', Auth::user()->id) }}">
+                        <a class="nav-link" style="color: green"
+                            href="{{ route('changePasswordHome', Auth::user()->id) }}">
                             Change Password</a>
                     </li>
                 </ul>
@@ -46,6 +48,11 @@
                         @csrf
                         <div class="row g-6">
                             <div class="col-md-6">
+                                <label for="fullname" class="form-label">Full Name</label>
+                                <input class="form-control" type="text" id="fullname" name="fullname"
+                                    value="{{ Auth::user()->fullname }}">
+                            </div>
+                            <div class="col-md-6">
                                 <label for="username" class="form-label">Username</label>
                                 <input class="form-control" type="text" id="username" name="username"
                                     value="{{ Auth::user()->username }}">
@@ -58,27 +65,27 @@
                             <div class="col-md-6">
                                 <label for="phone" class="form-label">Phone Number</label>
                                 <input class="form-control" type="text" id="phone" name="phone"
-                                    value="{{ Auth::user()->phone ?? '-' }}">
+                                    value="{{ Auth::user()->phone ?? ' ' }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="address" class="form-label">Address</label>
                                 <input class="form-control" type="text" id="address" name="address"
-                                    value="{{ Auth::user()->address ?? '-' }}">
+                                    value="{{ Auth::user()->address ?? ' ' }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="country" class="form-label">Country</label>
                                 <input class="form-control" type="text" id="country" name="country"
-                                    value="{{ Auth::user()->country ?? '-' }}">
+                                    value="{{ Auth::user()->country ?? ' ' }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="city" class="form-label">City</label>
                                 <input class="form-control" type="text" id="city" name="city"
-                                    value="{{ Auth::user()->city ?? '-' }}">
+                                    value="{{ Auth::user()->city ?? ' ' }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="postal_code" class="form-label">Postal Code</label>
                                 <input class="form-control" type="text" id="postal_code" name="postal_code"
-                                    value="{{ Auth::user()->postal_code ?? '-' }}">
+                                    value="{{ Auth::user()->postal_code ?? ' ' }}">
                             </div>
                         </div>
                         <div class="mt-5">

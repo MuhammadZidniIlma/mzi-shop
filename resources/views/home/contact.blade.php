@@ -1,6 +1,7 @@
 <x-layout-home>
     <x-hero-home title="Contact Us"
-        description="Need assistance or have questions? Reach out to the MZI Shop team via phone, email, or our online form. We’re here to help with product details, orders, and any other inquiries. We’ll respond promptly to ensure you receive the support you need." />
+        description="Need assistance or have questions? Reach out to the MZI Shop team via phone, email, or our online form. We’re here to help with product details, orders, and any other inquiries. We’ll respond promptly to ensure you receive the support you need."
+        imageUrl="{{ asset('images/couch.png') }}" />
 
     <div class="untree_co-section">
         <div class="container">

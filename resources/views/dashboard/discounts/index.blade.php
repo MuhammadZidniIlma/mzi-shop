@@ -36,7 +36,7 @@
                                 <th>{{ $loop->iteration }}</th>
                                 <td>{{ $discount->name_discount }}</td>
                                 <td>
-                                    {{ $discount->persentase_discount }}
+                                    {{ $discount->persentase_discount }}%
                                 </td>
                                 <td>
                                     Rp. {{ number_format($discount->amount_discount) }}
@@ -56,8 +56,12 @@
                                             data-bs-toggle="dropdown" aria-expanded="false"><i
                                                 class="bx bx-dots-vertical-rounded bx-md"></i></a>
                                         <ul class="dropdown-menu dropdown-menu-end m-0" style="">
-                                            <li><a href="javascript:;" class="dropdown-item">Details</a></li>
-                                            <li><a href="javascript:;" class="dropdown-item">Archive</a></li>
+                                            <li>
+                                                <a type="button" class="dropdown-item delete-record"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#edit{{ $discount->id }}">Edit
+                                                </a>
+                                            </li>
                                             <div class="dropdown-divider"></div>
                                             <li>
                                                 <a type="button" class="dropdown-item text-danger delete-record"
@@ -67,12 +71,8 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    {{-- <button type="buttom" class="btn btn-icon item-edit" data-bs-toggle="modal"
-                                        data-bs-target="#edit{{ $discount->slug }}">
-                                        <i class="bx bx-edit bx-md"></i>
-                                    </button>
-                                    @include('dashboard.discounts.edit') --}}
                                     @include('dashboard.discounts.delete')
+                                    @include('dashboard.discounts.edit')
                                 </td>
                             </tr>
                         @endforeach

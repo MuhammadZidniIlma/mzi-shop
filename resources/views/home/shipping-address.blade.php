@@ -13,11 +13,11 @@
                                 @method('PUT')
                                 @csrf
                                 <div class="row mb-6">
-                                    <label class="col-sm-2 col-form-label" for="basic-default-name">Username</label>
+                                    <label class="col-sm-2 col-form-label" for="basic-default-name">Full Name</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="basic-default-name"
-                                            name="username" placeholder="Please Enter Your Name"
-                                            value="{{ Auth::user()->username ?? '' }}" required />
+                                            name="fullname" placeholder="Please Enter Your Name"
+                                            value="{{ Auth::user()->fullname ?? '' }}" required />
                                     </div>
                                 </div>
                                 <div class="row mb-6">

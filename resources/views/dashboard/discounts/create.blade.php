@@ -17,12 +17,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="persentase_discount" class="form-label">Persentase Discount</label>
-                        <input type="text" class="form-control" id="persentase_discount" name="persentase_discount"
-                            placeholder="Enter category name" value="{{ old('persentase_discount') }}">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" id="persentase_discount"
+                                name="persentase_discount" placeholder="Enter category name"
+                                value="{{ old('persentase_discount') }}">
+
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="amount_discount" class="form-label">Max Amount Discount</label>
-                        <input type="text" class="form-control" id="amount_discount" name="amount_discount"
+                        <input type="number" class="form-control" id="amount_discount" name="amount_discount"
                             placeholder="Enter category name" value="{{ old('amount_discount') }}">
                     </div>
                     <div class="mb-3">

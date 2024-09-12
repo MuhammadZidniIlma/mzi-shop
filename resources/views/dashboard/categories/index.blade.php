@@ -39,32 +39,19 @@
                                     {{ $category->slug }}
                                 </td>
                                 <td>
-                                    <div class="d-inline-block"><a href="javascript:;"
-                                            class="btn btn-icon dropdown-toggle hide-arrow me-1"
-                                            data-bs-toggle="dropdown" aria-expanded="false"><i
-                                                class="bx bx-dots-vertical-rounded bx-md"></i></a>
-                                        <ul class="dropdown-menu dropdown-menu-end m-0" style="">
-                                            <li><a href="javascript:;" class="dropdown-item">Details</a></li>
-                                            <li><a href="javascript:;" class="dropdown-item">Archive</a></li>
-                                            <div class="dropdown-divider"></div>
-                                            <li>
-                                                <a type="button" class="dropdown-item text-danger delete-record"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#delete{{ $category->slug }}">Delete
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                     <button type="buttom" class="btn btn-icon item-edit" data-bs-toggle="modal"
                                         data-bs-target="#edit{{ $category->slug }}">
                                         <i class="bx bx-edit bx-md"></i>
+                                    </button>
+                                    <button type="buttom" class="text-danger btn btn-icon item-delete"
+                                        data-bs-toggle="modal" data-bs-target="#delete{{ $category->slug }}">
+                                        <i class="bx bx-trash bx-md"></i>
                                     </button>
                                     @include('dashboard.categories.edit')
                                     @include('dashboard.categories.delete')
                                 </td>
                             </tr>
                         @endforeach
-                        </tr>
                     </tbody>
                 </table>
             </div>

@@ -46,6 +46,11 @@
                         @csrf
                         <div class="row g-6">
                             <div class="col-md-6">
+                                <label for="fullname" class="form-label">Full Name</label>
+                                <input class="form-control" type="text" id="fullname" name="fullname"
+                                    value="{{ Auth::user()->fullname }}">
+                            </div>
+                            <div class="col-md-6">
                                 <label for="username" class="form-label">Username</label>
                                 <input class="form-control" type="text" id="username" name="username"
                                     value="{{ Auth::user()->username }}">
@@ -101,7 +106,7 @@
                     </div>
                     <a type="button" class="btn btn-primary me-3 mb-4 text-white" data-bs-toggle="modal"
                         data-bs-target="#deactiveAccount{{ Auth::user()->id }}">
-                        <i class="bx bx-upload d-block d-sm-none"></i>
+                        <i class="bx bx-trash d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Deactivate Account</span>
                     </a>
                 </div>

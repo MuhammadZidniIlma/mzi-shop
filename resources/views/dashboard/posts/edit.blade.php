@@ -33,7 +33,7 @@
                                     data-bs-dismiss="modal">Kembali</button>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
-                            {{-- </form> --}}
+                        </form>
                     </div>
                 </div>
             </div>

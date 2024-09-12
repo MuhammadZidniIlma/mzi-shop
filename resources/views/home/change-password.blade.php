@@ -4,12 +4,13 @@
             <div class="nav-align-top">
                 <ul class="nav nav-pills flex-column flex-md-row mb-6">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile.home', Auth::user()->id) }}"><i
+                        <a class="nav-link" style="color: green" href="{{ route('profile.home', Auth::user()->id) }}"><i
                                 class="bx bx-sm bx-user me-1_5"></i>
                             Account</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active" href="{{ route('changePasswordHome', Auth::user()->id) }}"><i
+                        <a class="nav-link active" style="background-color: green"
+                            href="{{ route('changePasswordHome', Auth::user()->id) }}"><i
                                 class="bx bx-sm bx-key me-1_5"></i>
                             Change Password</a>
                     </li>

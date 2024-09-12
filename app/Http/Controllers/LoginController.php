@@ -41,6 +41,7 @@ class LoginController extends Controller
     public function registerproses(Request $request)
     {
         $validated = $request->validate([
+            'fullname' => 'required|min:3|max:255',
             'username' => 'required|unique:users|min:3|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:3|max:255',

@@ -27,6 +27,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         $validated = $request->validate([
+            'fullname' => 'required|min:3|max:50',
             'username' => [
                 'required',
                 'min:3',
@@ -129,6 +130,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'fullname' => 'required|min:3|max:50',
             'username' => 'required|unique:users|min:3|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:3|max:255',
@@ -146,6 +148,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
+            'fullname' => 'required|min:3|max:50',
             'username' => 'required|min:3|max:255',
             'email' => 'required|email',
             'role' => 'required',
@@ -176,6 +179,30 @@ class UserController extends Controller
         User::findOrFail($id)->delete();
 
         notify()->success('User data deleted successfully', 'Success');
+
+        return redirect()->back();
+    }
+
+    public function banUser($id)
+    {
+        $user = User::findOrFail($id);
+        $user->update([
+            'status' => 'banned',
+        ]);
+
+        notify()->success('User banned successfully', 'Success');
+
+        return redirect()->back();
+    }
+
+    public function unbanUser($id)
+    {
+        $user = User::findOrFail($id);
+        $user->update([
+            'status' => 'active',
+        ]);
+
+        notify()->success('User banned successfully', 'Success');
 
         return redirect()->back();
     }
