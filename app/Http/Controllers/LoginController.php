@@ -19,7 +19,7 @@ class LoginController extends Controller
         $validated = $request->validate([
             'username' => 'required||min:3|max:255',
             'password' => 'required|min:3|max:255',
-        ]);
+        ], );
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
 
@@ -45,6 +45,20 @@ class LoginController extends Controller
             'username' => 'required|unique:users|min:3|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:3|max:255',
+        ], [
+            'fullname.required' => 'Fullname is required',
+            'fullname.min' => 'Fullname must be at least 3 characters',
+            'fullname.max' => 'Fullname must not exceed 255 characters',
+            'username.required' => 'Username is required',
+            'username.unique' => 'Username already exists',
+            'username.min' => 'Username must be at least 3 characters',
+            'username.max' => 'Username must not exceed 255 characters',
+            'email.required' => 'Email is required',
+            'email.email' => 'Email must be a valid email address',
+            'email.unique' => 'Email already exists',
+            'password.required' => 'Password is required',
+            'password.min' => 'Password must be at least 3 characters',
+            'password.max' => 'Password must not exceed 255 characters',
         ]);
 
         $validated['password'] = Hash::make($request->password);

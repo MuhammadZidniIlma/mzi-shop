@@ -135,6 +135,13 @@ class OrderController extends Controller
             })
             ->get();
 
+        // cek apakah order item ada
+        if ($orderItems->isEmpty()) {
+            notify()->error('No order items found', 'Error');
+
+            return redirect()->route('shop');
+        }
+
         // Hitung subtotal dengan menjumlahkan semua (quantity * price) dari setiap order item
         $subtotal = $orderItems->sum(function ($orderItem) {
             return $orderItem->quantity * $orderItem->price;
