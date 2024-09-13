@@ -58,29 +58,22 @@
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
         <li class="menu-item {{ Request::routeIs('dashboard') ? 'active open' : '' }}">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-smile"></i>
                 <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
                 {{-- <span class="badge rounded-pill bg-danger ms-auto">5</span> --}}
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item {{ Request::routeIs('dashboard') ? 'active' : '' }}">
-                    <a href="index.html" class="menu-link">
-                        <div class="text-truncate" data-i18n="Analytics">Analytics</div>
-                    </a>
-                </li>
-            </ul>
         </li>
 
         <!-- Layouts -->
-        <li class="menu-item ">
+        <li class="menu-item {{ Request::routeIs('discount.banner') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div class="text-truncate" data-i18n="Components">Components</div>
             </a>
 
             <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item {{ Request::routeIs('discount.banner') ? 'active' : '' }}">
                     <a href="{{ route('discount.banner') }}" class="menu-link">
                         <div class="text-truncate" data-i18n="Banner Discount">Banner Discount</div>
                     </a>

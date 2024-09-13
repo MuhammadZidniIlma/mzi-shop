@@ -22,17 +22,9 @@
                 </div>
 
                 <div class="flex-sb-m w-full p-b-30">
-                    <div>
-                        <a href="{{ route('register') }}" class="txt1">
-                            Dont have an account?
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="#" class="txt1">
-                            Forgot Password?
-                        </a>
-                    </div>
+                    <a href="{{ route('register') }}" class="txt1">
+                        Dont have an account?
+                    </a>
                 </div>
 
                 <div class="container-login100-form-btn">

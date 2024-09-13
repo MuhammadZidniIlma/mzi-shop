@@ -21,4 +21,16 @@ class Discount extends Model
     {
         return $this->hasMany(BannerDiscount::class);
     }
+
+    public function scopeUpdateStatuses($query)
+    {
+        $query->each(function ($discount) {
+            if ($discount->start_date <= now() && $discount->expiration_date >= now()) {
+                $discount->status = 'active';
+            } else {
+                $discount->status = 'inactive';
+            }
+            $discount->save();
+        });
+    }
 }

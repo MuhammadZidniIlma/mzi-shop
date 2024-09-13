@@ -4,5 +4,5 @@
         :imageUrl="asset('images/couch.png')" />
 
     <x-service-more />
-    <x-testimonial />
+    {{-- <x-testimonial /> --}}
 </x-layout-home>

@@ -64,7 +64,7 @@
     <!-- End Discount Section -->
 
     <!-- Start Testimonial Slider -->
-    <x-testimonial />
+    {{-- <x-testimonial /> --}}
     <!-- End Testimonial Slider -->
 
     <!-- Start Blog Section -->

@@ -8,5 +8,5 @@
     <x-service />
 
     <!-- Bagian Testimonials -->
-    <x-testimonial />
+    {{-- <x-testimonial /> --}}
 </x-layout-home>

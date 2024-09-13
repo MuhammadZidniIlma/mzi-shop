@@ -13,6 +13,7 @@ class DiscountController extends Controller
 {
     public function index()
     {
+        Discount::updateStatuses();
         $discounts = Discount::all();
 
         return view('dashboard.discounts.index', compact('discounts'));
